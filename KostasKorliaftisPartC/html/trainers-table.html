@@ -1,0 +1,208 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Trainers</title>
+    <link href="../Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="../Content/bootstrap-select.min.css" rel="stylesheet" />
+    <link href="../Content/font-awesome.min.css" rel="stylesheet" />
+    <link href="../CSS/main-style.css" rel="stylesheet" />
+    <link href="../CSS/form-style.css" rel="stylesheet" />
+</head>
+<body>
+    <!--Navigation-->
+    <nav class="navbar navbar-expand-md navbar-light bg-light sticky-top">
+        <a class="navbar-brand" href="../index.html"><img class="img-fluid" src="../img/logo1.png" /></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="../index.html">Home</a>
+                </li>
+                <li class="nav-item ">
+                    <a class="nav-link btn-group" href="students-table.html">Students</a>
+                </li>
+                <li class="nav-item ">
+                    <a class="nav-link btn-group" href="trainers-table.html">Trainers</a>
+                </li>
+                <li class="nav-item ">
+                    <a class="nav-link btn-group" href="courses-table.html">Courses</a>
+                </li>
+                <li class="nav-item ">
+                    <a class="nav-link btn-group" href="assignments-table.html">Assignments</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div id="TableContainer" class="container mt-5">
+        <!--table-->
+        <h3 class="mb-3 text-center">Trainers Table</h3>
+        <div class="table-responsive-md">
+            <table id="trTable" class="table table-hover table-bordered table-striped table-light">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>ID</th>
+                        <th>Firstname</th>
+                        <th>Lastname</th>
+                        <th>Subject</th>
+                        <th>Courses</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="trBody">
+                </tbody>
+            </table>
+        </div>
+        <!--Toggle Form Button-->
+        <div>
+            <hr class="mb-2" />
+            <button id="addTrBtn" class="btn btn-primary mb-4">Add Trainer</button>
+        </div>
+        <!--Form-->
+        <main class="my-form mb-5">
+            <div class="cotainer">
+                <div class="row justify-content-center">
+                    <div class="col-md-8">
+                        <div class="card">
+                            <div class="card-header">
+                                <h6 class="text-center">Register Trainer</h6>
+                            </div>
+                            <div class="card-body">
+                                <form id="trForm" name="my-form">
+                                    <div class="form-group row">
+                                        <label for="first-name" class="col-md-4 col-form-label text-md-right">First Name</label>
+                                        <div class="col-md-6">
+                                            <input id="first-name" pattern="^[A-Za-z]+$" type="text" class="form-control" name="first-name" placeholder="letters only(2 min characters)" required autocomplete="off" minlength="2">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group row">
+                                        <label for="last-name" class="col-md-4 col-form-label text-md-right">Last Name</label>
+                                        <div class="col-md-6">
+                                            <input id="last-name" pattern="^[A-Za-z]+$" type="text" class="form-control" name="last-name" placeholder="letters only(2 min characters)" required autocomplete="off" minlength="2">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group row">
+                                        <label for="subject" class="col-md-4 col-form-label text-md-right">Subject</label>
+                                        <div class="col-md-6">
+                                            <input id="subject" type="text" class="form-control" name="subject" placeholder="(2 min characters)" required autocomplete="off" minlength="2">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group row">
+                                        <label for="trSelect" class="col-md-4 col-form-label select-label text-md-right">Choose Course</label>
+                                        <select id="trSelect" class="selectpicker form-control col-md-6" data-style="bg-white rounded-pill" multiple name="courses">
+                                        </select>
+                                    </div>
+
+                                    <div class="col-md-6 offset-md-4">
+                                        <input type="reset" class="btn btn-outline-secondary btn-block" value="Reset" />
+                                        <input id="trFormSubmit" type="submit" class="btn btn-success btn-block" value="Register" />
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!--modal-->
+    <div class="modal fade" id="trModal" tabindex="-1" role="dialog" aria-labelledby="trModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="trModalLabel">Update Trainer</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                </div>
+                <div class="modal-body">
+
+                </div>
+                <div class="modal-footer">
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Fixed Background-->
+    <figure>
+        <div class="fixed-wrap">
+
+            <div id="fixed"></div>
+        </div>
+    </figure>
+
+    <div class="container-fluid">
+        <!--Connect-->
+        <div class="row text-center padding">
+            <div class="col-12">
+                <h2>Connect</h2>
+            </div>
+            <div class="col-12 social padding">
+                <a href="https://www.instagram.com/" target="_blank" data-toggle="tooltip" data-placement="left" title="Our Instagram">
+                    <i class="fa fa-instagram"></i>
+                </a>
+                <a href="https://twitter.com/" data-toggle="tooltip" data-placement="left" title="Our Twitter" target="_blank">
+                    <i class="fa fa-twitter-square"></i>
+                </a>
+                <a href="https://www.facebook.com/" data-toggle="tooltip" data-placement="left" title="Our Facebook" target="_blank">
+                    <i class="fa fa-facebook-square"></i>
+                </a>
+                <a href="https://www.youtube.com/" data-toggle="tooltip" data-placement="left" title="Our Youtube" target="_blank">
+                    <i class="fa fa-youtube-square"></i>
+                </a>
+            </div>
+            <hr class="my-4" />
+        </div>
+
+        <!--Footer-->
+        <footer class="bg-dark">
+            <div class="row text-center">
+                <div class="col-md-4">
+                    <img src="../img/footerlogo.jpg" alt="Alternate Text" />
+                    <hr class="light" />
+                    <p>210-00-00000</p>
+                    <p>coding@school.com</p>
+                    <p>31 Pouthena, Gonia</p>
+                    <p>Athens , Greece 104 31</p>
+                </div>
+                <div class="col-md-4">
+                    <hr class="light" />
+                    <h5>Our Hours</h5>
+                    <hr class="light" />
+                    <p>Monday - Friday: 9am - 5pm</p>
+                    <p>Saturday: 10am - 2pm</p>
+                    <p>Sunday: Closed</p>
+                </div>
+                <div class="col-md-4">
+                    <hr class="light" />
+                    <h5>Service Area</h5>
+                    <hr class="light" />
+                    <p>Patra, Achaia, 262 21</p>
+                    <p>Hraklio, Kriti, 71 201</p>
+                    <p>Thesaloniki, Thesaloniki, 542 48</p>
+                    <p>Ioanina, Ipiros, 452 21</p>
+                </div>
+                <div class="col-12">
+                    <hr class="light-100" />
+                    <h5>&copy; Coding-school.com</h5>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="../Scripts/jquery-3.6.0.min.js"></script>
+    <script src="../Scripts/umd/popper.min.js"></script>
+    <script src="../Scripts/bootstrap.min.js"></script>
+    <script src="../Scripts/bootstrap.bundle.min.js"></script>
+    <script src="../Scripts/bootstrap-select.min.js"></script>
+    <script src="../Javascript/JavaScript.js"></script>
+</body>
+</html>
